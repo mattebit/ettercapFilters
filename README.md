@@ -1,0 +1,2 @@
+# ettercapFilters
+Some ettercap filters
